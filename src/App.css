@@ -1,38 +1,141 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content {
+  margin-top: 68px;
+  padding: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #002651;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar .navbar-toggler {
+  display: none;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar .navbar-toggler .toggler-line {
+  height: 2px;
+  background: #fff;
+}
+
+.navbar .navbar-toggler .toggler-line:nth-of-type(1) {
+  width: 100%;
+}
+
+.navbar .navbar-toggler .toggler-line:nth-of-type(2) {
+  width: 75%;
+}
+
+.navbar .navbar-toggler .toggler-line:nth-of-type(3) {
+  width: 50%;
+}
+
+.navbar .navbar-toggler.active .toggler-line {
+  width: 100%;
+  height: 2px;
+  background: #fff;
+}
+
+.navbar .navbar-logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.7rem;
+}
+
+.navbar .navbar-navigation ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.navbar .navbar-navigation ul li {
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-navigation ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar .navbar-navigation ul li a:hover {
+  color: #28c7fa;
+}
+
+@media (max-width: 1000px) {
+  .navbar .navbar-toggler {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
-  to {
-    transform: rotate(360deg);
+  .navbar .navbar-navigation.mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background: #002651;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 3rem;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+  }
+  .navbar .navbar-navigation.mobile.mobile-active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .navbar .navbar-navigation.mobile ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .navbar .navbar-navigation.mobile ul li {
+    margin: 1rem 0;
   }
 }
