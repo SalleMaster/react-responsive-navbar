@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -7,8 +8,13 @@ const Navbar = () => {
     setActive(!active);
   };
 
+  const removeNavbar = () => {
+    setActive(false);
+  };
+
   return (
     <nav className='navbar'>
+      <div className='nav-bg'></div>
       <div className='navbar-logo'>
         <a href='/'>LOGO</a>
       </div>
@@ -29,13 +35,44 @@ const Navbar = () => {
       >
         <ul>
           <li>
-            <a href='/'>Products</a>
+            <NavLink
+              exact
+              to='/'
+              activeClassName='nav-active'
+              onClick={removeNavbar}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <a href='/'>Users</a>
+            <NavLink
+              exact
+              to='/products'
+              activeClassName='nav-active'
+              onClick={removeNavbar}
+            >
+              Products
+            </NavLink>
           </li>
           <li>
-            <a href='/'>About Us</a>
+            <NavLink
+              exact
+              to='/users'
+              activeClassName='nav-active'
+              onClick={removeNavbar}
+            >
+              Users
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              exact
+              to='/about'
+              activeClassName='nav-active'
+              onClick={removeNavbar}
+            >
+              About Us
+            </NavLink>
           </li>
         </ul>
       </div>
