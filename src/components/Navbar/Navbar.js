@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className='navbar'>
       <div className='nav-bg'></div>
       <div className='navbar-logo'>
-        <a href='/'>LOGO</a>
+        <a href='/'>WEB DEV SOLUTIONS</a>
       </div>
       <div
         onClick={toggleNavbar}
